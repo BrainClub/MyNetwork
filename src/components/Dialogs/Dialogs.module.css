@@ -1,0 +1,26 @@
+
+.dialogs{
+
+    color: black;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+.dialogsItems{
+    height: 100%;
+    margin: 5px;
+    background-color: rgba(31, 138, 240, 0.38);
+    padding: 10px;
+    border-radius: 20px;
+    color: #1967ba;
+}
+.dialogsItems .active{
+    color: white;
+}
+
+.messengesItem{
+    margin: 5px;
+    background-color: rgba(141, 201, 240, 0.87);
+    padding: 10px;
+    border-radius: 20px;
+}

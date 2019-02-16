@@ -1,0 +1,12 @@
+.header{
+    grid-area: h;
+    background-color: dodgerblue;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+
+.header img{
+    padding: 20px;
+    width: 20px;
+}
