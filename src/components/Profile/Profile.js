@@ -5,13 +5,13 @@ import AvatarDescription from "./AvatarDescription/AvatarDescription";
 
 
 const Profile = (props) => {
-
+    debugger;
 
         return (
             <div>
                 <AvatarDescription/>
 
-                <Mypost posts={props.posts}/>
+                <Mypost posts={props.state.posts}/>
             </div>
         );
 

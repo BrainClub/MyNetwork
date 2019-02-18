@@ -3,6 +3,8 @@ import Post from './post/Post'
 import style from './Mypost.module.css'
 
 class Mypost extends React.Component {
+
+
     render() {
         return (
             <div>

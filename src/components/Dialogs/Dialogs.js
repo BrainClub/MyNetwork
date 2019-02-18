@@ -33,8 +33,8 @@ const Dialogs = (props) => {
         {id: 2, name: "Tom"}
     ];*/
 
-    let dialogsElements = props.dialogsData.map( dialog => ( <DialogItem name={dialog.name} id={dialog.id}/>) );
-    let messageElements = props.messageData.map( message => ( <Message message={message.message}/>) );
+    let dialogsElements = props.state.dialogsData.map( dialog => ( <DialogItem name={dialog.name} id={dialog.id}/>) );
+    let messageElements = props.state.messageData.map( message => ( <Message message={message.message}/>) );
         return (
             <div>
              <div className={style.dialogs}>

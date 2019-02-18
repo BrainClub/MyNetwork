@@ -18,7 +18,7 @@ debugger;
             <div>
                 <div>
                    <textarea></textarea>
-                    <button>add</button>
+                    <button onClick={ () => (alert('Я ща як в зуби нажбу, АН КШШ ОТСУДЯ'))}>add</button>
                 </div>
                 {postsElements}
 
