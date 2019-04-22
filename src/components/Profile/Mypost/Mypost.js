@@ -3,7 +3,7 @@ import Post from './post/Post'
 import style from './Mypost.module.css'
 
 const Mypost = (props) => {
-debugger;
+
     // let posts = [
     //     { id: 1, message: 'How are you guys?', likeСount:6 },
     //     { id: 2, message:'Look at me', likeСount: 5}
@@ -14,11 +14,23 @@ debugger;
     )
 
 
+    let newPostElement = React.createRef();
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        // може бути як, якби був ІD
+        //let text = document.getElementById('new-post').value;
+
+        alert(text);
+    };
+
+
+
+
         return (
             <div>
                 <div>
-                   <textarea></textarea>
-                    <button onClick={ () => (alert('Я ща як в зуби нажбу, АН КШШ ОТСУДЯ'))}>add</button>
+                   <textarea ref={newPostElement}></textarea>
+                    <button onClick={addPost}>add</button>
                 </div>
                 {postsElements}
 
