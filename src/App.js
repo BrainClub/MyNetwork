@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import './App.css';
 
@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 import Dialogs from './components/Dialogs/Dialogs';
 import {Route, BrowserRouter} from "react-router-dom";
+
 // import NavLink from "react-router-dom/es/NavLink";
 
 const App = (props) => {
@@ -21,7 +22,7 @@ const App = (props) => {
                            render={() => <Dialogs state={props.state.dialogPage}/>}
                     />
                     <Route path="/profile"
-                           render={() => <Profile state={props.state.profilePage}/>}
+                           render={() => <Profile state={props.state.profilePage}  updateNewPostText = {props.updateNewPostText} addPost={props.addPost}/>}
                     />
                 </div>
             </div>

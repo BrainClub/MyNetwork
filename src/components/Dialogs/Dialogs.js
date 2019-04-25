@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import Mypost from "./mypost/Mypost";
+import React from 'react';
+// import Mypost from "./mypost/Mypost";
 import style from './Dialogs.module.css'
 import {NavLink} from "react-router-dom";
 

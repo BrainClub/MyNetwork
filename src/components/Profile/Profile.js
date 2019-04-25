@@ -11,7 +11,10 @@ const Profile = (props) => {
         <div>
             <AvatarDescription/>
 
-            <Mypost posts={props.state.posts}/>
+            <Mypost posts={props.state.posts}
+                    placeholderPost={props.state.placeholderPost}
+                    updateNewPostText ={props.updateNewPostText}
+                    addPost={props.addPost}/>
         </div>
     );
 
