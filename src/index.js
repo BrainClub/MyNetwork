@@ -1,8 +1,10 @@
 import React from 'react';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import state, {subscribe} from "./redux/state";
-
+import store from "./redux/state";
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
 // Прокинули в файл state
 // let messageData = [
 //     {id: 1, message: 'hi'},
@@ -20,21 +22,18 @@ import state, {subscribe} from "./redux/state";
 // ];
 // ReactDOM.render(<App dialogsData={dialogsData} messageData={messageData} posts={posts} />, document.getElementById('root'));
 
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import {addPost,updateNewPostText} from "./redux/state";
-
-
-
-
- let rerenderEntireTree = (state) =>{
-    ReactDOM.render(
-        <App state={state} addPost={addPost} updateNewPostText={updateNewPostText}/>, document.getElementById('root')
-    );
+let rerenderEntireTree = (state) =>{
+  ReactDOM.render(
+    <App state={state}
+         addPost={store.addPost.bind(store)}
+         updateNewPostText={store.updateNewPostText.bind(store)}
+    />, document.getElementById('root')
+  );
 };
-subscribe(rerenderEntireTree);
-rerenderEntireTree(state);
+
+rerenderEntireTree(store.getState());
+store.subscribe(rerenderEntireTree);
+
 
 
 
