@@ -32,19 +32,36 @@ let store = {
     this._callSubscriber = observer;  // патерн наблюдатель
   },
 
-  addPost(){
-    let newPost = {
-      id: 5,
-      message: this._state.profilePage.placeholderPost,
-      likeСount: 0
-    };
-    this._state.profilePage.posts.push(newPost);
-    this._callSubscriber(this._state);
-    this._state.profilePage.posts.updateNewPostText = '';
-  },
-  updateNewPostText(text){
-    this._state.profilePage.placeholderPost = text;
-    this._callSubscriber(this._state);
+  // addPost(){
+  //   let newPost = {
+  //     id: 5,
+  //     message: this._state.profilePage.placeholderPost,
+  //     likeСount: 0
+  //   };
+  //   this._state.profilePage.posts.push(newPost);
+  //   this._callSubscriber(this._state);
+  //   this._state.profilePage.posts.updateNewPostText = '';
+  // },
+  // updateNewPostText(text){
+  //   this._state.profilePage.placeholderPost = text;
+  //   this._callSubscriber(this._state);
+  // }
+
+  dispatch(action){ //type: 'add-post'
+    if (action.type === 'ADD-POST'){
+      let newPost = {
+        id: 5,
+        message: this._state.profilePage.placeholderPost,
+        likeСount: 0
+      };
+      this._state.profilePage.posts.push(newPost);
+      this._callSubscriber(this._state);
+      this._state.profilePage.posts.updateNewPostText = '';
+    } else if (action.type === 'UPDATE-NEW-POST-TEXT'){
+      this._state.profilePage.placeholderPost = action.text;
+      this._callSubscriber(this._state);
+    }
+
   }
 
 }
