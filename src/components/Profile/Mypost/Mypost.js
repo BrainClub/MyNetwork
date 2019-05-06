@@ -11,18 +11,21 @@ const Mypost = (props) => {
     );
     let ChangePostText = () =>{
         let text = newPostElement.current.value;
-      props.updateNewPostText(text);
+      // props.updateNewPostText(text);
+      props.dispatch({type: 'UPDATE-NEW-POST-TEXT', text: text })
     };
     let newPostElement = React.createRef();
     let addPost = () => {
-        let text = newPostElement.current.value;
-        // newPostElement.current.value = '';
-        // може бути як, якби був ІD
-        //let text = document.getElementById('new-post').value;
-        props.addPost(text);
-        props.updateNewPostText('');
+     props.dispatch({type: 'ADD-POST'})
+        // let text = newPostElement.current.value;
+        // // newPostElement.current.value = '';
+        // // може бути як, якби був ІD
+        // //let text = document.getElementById('new-post').value;
+        // props.addPost(text);
+        // props.updateNewPostText('');
     };
     let clickPost = () =>{
+
         props.updateNewPostText('');
     };
         return (
@@ -31,7 +34,7 @@ const Mypost = (props) => {
                    <textarea ref={newPostElement}
                              onChange={ChangePostText}
                              value={props.placeholderPost}
-                             onClick={clickPost}
+                             // onClick={clickPost}
                    />
                     <button onClick={addPost}>add</button>
                 </div>
