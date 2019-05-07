@@ -66,6 +66,23 @@ let store = {
 
 }
 
+export let addPostActionCreator = () =>({type: 'ADD-POST'})
+export let updateNewPostTextActionCreator = (text) =>
+  ({type: 'ADD-POST',text: text})
+// export let addPostActionCreator = () =>{
+//   return {
+//     type: 'ADD-POST'
+//   }
+// }
+// export let updateNewPostTextActionCreator = (text) =>{
+//   console.log(text);
+//   return {
+//     type: 'UPDATE-NEW-POST-TEXT',
+//     text: text
+//   }'
+// }
+
+
 window.store = store;
 
 export default store;

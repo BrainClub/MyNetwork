@@ -29,15 +29,8 @@ class Dialog extends React.Component {
     onClick = () =>{
         console.log(this.state.text)
     };
-
-
-
     render() {
-
         const props = this.props;
-
-
-
         let dialogsElements = props.state.dialogsData.map( dialog => ( <DialogItem name={dialog.name} id={dialog.id}/>) );
         let messageElements = props.state.messageData.map( message => ( <Message message={message.message}/>) );
 
@@ -64,10 +57,6 @@ class Dialog extends React.Component {
                         {messageElements}
                         <textarea  ref={ i  => this.refText = i}   onChange={this.onChange}>{this.state.text}</textarea>
                         <button onClick={this.onClick}>Send</button>
-
-
-
-
                         <button onClick={() => console.log(this.refText.value)}>Send</button>
                         {/*<Message message={messageData[0].message}  />*/}
                         {/*<Message message={messageData[1].message}  />*/}
